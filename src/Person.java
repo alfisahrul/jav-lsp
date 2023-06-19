@@ -2,137 +2,67 @@
 import java.util.*;
 
 /**
- *
+ *  Class person entitas objek untuk setiap orang yang menggunakan perpustakaan
+ *  Masing-masing dari orang memiliki attribut yang sama
  */
 public class Person {
 
+    private int id;
 
-
-
-    /**
-     * Default constructor
-     */
-    public Person() {
+    public int getId() {
+        return id;
     }
 
-    /**
-     *
-     */
-    private int ID;
-
-    /**
-     *
-     */
-    private int Nama;
-
-    /**
-     *
-     */
-    private String KTP;
-
-    /**
-     *
-     */
-    private String Alamat;
-
-    /**
-     *
-     */
-    private String JenisKelamin;
-
-    /**
-     * @param id
-     * @param nama
-     * @param alamat
-     * @param jeniskelamin
-     */
-    public void Person(int id, String nama, String alamat, String jeniskelamin) {
-        // TODO implement here
+    public void setId(int id) {
+        this.id = id;
     }
 
-    /**
-     * @return
-     */
-    public int getID() {
-        // TODO implement here
-        return 0;
-    }
+    private String nama;
 
-    /**
-     * @param id
-     * @return
-     */
-    public void setID(int id) {
-        // TODO implement here
-        return ;
-    }
-
-    /**
-     * @return
-     */
     public String getNama() {
-        // TODO implement here
-        return "";
+        return nama;
     }
 
-    /**
-     * @param nama
-     * @return
-     */
     public void setNama(String nama) {
-        // TODO implement here
-        return ;
+        this.nama = nama;
     }
 
-    /**
-     * @return
-     */
-    public String getKTP() {
-        // TODO implement here
-        return "";
+    private String ktp;
+
+    public String getKtp() {
+        return ktp;
     }
 
-    /**
-     * @param ktp
-     * @return
-     */
-    public void setKTP(String ktp) {
-        // TODO implement here
-        return ;
+    public void setKtp(String ktp) {
+        this.ktp = ktp;
     }
 
-    /**
-     * @return
-     */
+    private String alamat;
+
     public String getAlamat() {
-        // TODO implement here
-        return "";
+        return alamat;
     }
 
-    /**
-     * @param alamat
-     * @return
-     */
     public void setAlamat(String alamat) {
-        // TODO implement here
-        return ;
+        this.alamat = alamat;
     }
 
-    /**
-     * @return
-     */
+    private String jenisKelamin;
+
     public String getJenisKelamin() {
-        // TODO implement here
-        return "";
+        return jenisKelamin;
     }
 
-    /**
-     * @param jeniskelamin
-     * @return
-     */
-    public void setJenisKelamin(String jeniskelamin) {
-        // TODO implement here
-        return ;
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
+    }
+
+    public Person(int id, String nama, String ktp, String alamat, String jenisKelamin) {
+        this.id= id;
+        this.nama = nama;
+        this.ktp = ktp;
+        this.alamat = alamat;
+        this.jenisKelamin = jenisKelamin;
     }
 
 }
