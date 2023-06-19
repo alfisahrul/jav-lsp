@@ -1,9 +1,12 @@
 import java.util.Scanner;
 
-public class Main {
+public class PerpusApp {
     public static void main(String[] args) {
+
+        //Menambahkan variabel sc untuk user memasukan Input dari keyboard
         Scanner sc = new Scanner(System.in);
 
+        //Menampilkan menu utama pada program utama
         do {
             System.out.println(" Menu Utama");
             System.out.println(PrintEqual());
@@ -14,6 +17,8 @@ public class Main {
             System.out.println(PrintEqual());
             System.out.print("Masukan pilihan: "
             );
+
+            // Memasukan pilihan yang sesuai dengan kondisi
             int pil = sc.nextInt();
 
             switch (pil){
@@ -35,17 +40,20 @@ public class Main {
                 default:
                     System.out.println("Masukan pilihan yang sesuai");
             }
-
+        sc.close();
 
         }while (true);
-    }
 
+    }
+    // Method untuk membuat garis
     public static String PrintEqual() {
-        for (int i = 0 ; i<=20;i++){
+        for (int i = 0 ; i<20;i++){
             System.out.print("=");
         }
         return"=";
     }
+
+
 
 
 

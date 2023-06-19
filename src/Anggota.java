@@ -8,12 +8,12 @@ public class Anggota {
         do {
             Scanner sc = new Scanner(System.in);
             System.out.println(" Menu Keanggotaan");
-            System.out.println(Main.PrintEqual());
+            System.out.println(PerpusApp.PrintEqual());
             System.out.println("1. Tambah Anggota \n" +
                     "2. Hapus Member\n"+
                     "3. Tampilkan Semua Member\n" +
                     "0. Kembali ke Menu Utama\n");
-            System.out.println(Main.PrintEqual());
+            System.out.println(PerpusApp.PrintEqual());
             System.out.print("Masukan pilihan: "
             );
             int pil = sc.nextInt();
@@ -31,7 +31,7 @@ public class Anggota {
                     TampilkanMember();
                     break;
                 case 0:
-                    Main.main(args);
+                    PerpusApp.main(args);
                     break;
                 default:
                     System.out.println("Masukan pilihan yang sesuai");
@@ -44,7 +44,7 @@ public class Anggota {
     public static void TambahMember(){
         do {
             Scanner sc = new Scanner(System.in);
-            System.out.println(Main.PrintEqual());
+            System.out.println(PerpusApp.PrintEqual());
             int id = sc.nextInt();
             sc.nextLine();
 
