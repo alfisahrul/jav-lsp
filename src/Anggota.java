@@ -1,75 +1,26 @@
-import java.util.Scanner;
-public class Anggota {
-
-
-    public static void main(String[] args) {
-
-
-        do {
-            Scanner sc = new Scanner(System.in);
-            System.out.println(" Menu Keanggotaan");
-            System.out.println(PerpusApp.PrintEqual());
-            System.out.println("1. Tambah Anggota \n" +
-                    "2. Hapus Member\n"+
-                    "3. Tampilkan Semua Member\n" +
-                    "0. Kembali ke Menu Utama\n");
-            System.out.println(PerpusApp.PrintEqual());
-            System.out.print("Masukan pilihan: "
-            );
-            int pil = sc.nextInt();
-
-            switch (pil){
-                case 1:
-                    TambahMember();
-                    break;
-
-                case 2:
-                    HapusMember();
-                    break;
-
-                case 3:
-                    TampilkanMember();
-                    break;
-                case 0:
-                    PerpusApp.main(args);
-                    break;
-                default:
-                    System.out.println("Masukan pilihan yang sesuai");
-            }
-
-
-        }while (true);
-
-    }
-    public static void TambahMember(){
-        do {
-            Scanner sc = new Scanner(System.in);
-            System.out.println(PerpusApp.PrintEqual());
-            int id = sc.nextInt();
-            sc.nextLine();
-
-
-        }while (true);
-
-
-    }
-    public static void HapusMember(){
-
+// Class turunan dari anggota
+class Anggota extends Person {
+    /**
+     * Konstruktor  objek kelas Anggota.
+     *
+     * @param id           ID.
+     * @param nama         Nama.
+     * @param ktp          KTP.
+     * @param alamat       Alamat.
+     * @param jenisKelamin Jenis kelamin.
+     */
+    public Anggota(int id, String nama, String ktp, String alamat, String jenisKelamin) {
+        super(id, nama, ktp, alamat, jenisKelamin);
     }
 
-    public static void TampilkanMember(){
-
+    /**
+     * Menampilkan informasi tentang anggota
+     */
+    public void printInfoAnggota() {
+        System.out.println("ID\t\t\t: " + this.getId());
+        System.out.println("Nama\t\t\t: " + this.getNama());
+        System.out.println("KTP\t\t\t: " + this.getKtp());
+        System.out.println("Alamat\t\t\t: " + this.getAlamat());
+        System.out.println("Jenis Kelamin\t\t: " + this.getJenisKelamin());
     }
-
-    public  Anggota (){
-
-
-    }
-
-    public void printInfoBuku() {
-
-    }
-
 }
-
-

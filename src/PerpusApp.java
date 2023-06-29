@@ -1,11 +1,16 @@
 import java.util.Scanner;
 
 public class PerpusApp {
+    //Menambahkan variabel sc untuk user memasukan Input dari keyboard
+    public static  java.util.Scanner sc = new java.util.Scanner(System.in);
     public static void main(String[] args) {
 
-        //Menambahkan variabel sc untuk user memasukan Input dari keyboard
-        Scanner sc = new Scanner(System.in);
+        showMenuUtama();
 
+
+    }
+
+    public static void showMenuUtama(){
         //Menampilkan menu utama pada program utama
         do {
             System.out.println(" Menu Utama");
@@ -23,15 +28,15 @@ public class PerpusApp {
 
             switch (pil){
                 case 1:
-                    Anggota.main(args);
+                    
                     break;
 
                 case 2:
-                    Buku.main(args);
+
                     break;
 
                 case 3:
-                    BukuDipinjam.main(args);
+
                     break;
                 case 0:
                     System.out.println("Terimakasih telah menggunakan aplikasi ");
@@ -40,7 +45,7 @@ public class PerpusApp {
                 default:
                     System.out.println("Masukan pilihan yang sesuai");
             }
-        sc.close();
+            sc.close();
 
         }while (true);
 

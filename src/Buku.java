@@ -1,179 +1,132 @@
+/**
+ * Kelas Buku merepresentasikan buku dalam sistem manajemen perpustakaan.
+ * Setiap buku memiliki ID unik, judul, penulis, jumlah stok, dan jumlah buku
+ * yang sedang dipinjam.
+ */
 public class Buku {
+    private int id;
 
-    public static void main(String[] args) {
-
+    public int getId() {
+        return id;
     }
-    public Buku() {
+
+    public void setId(int id) {
+        this.id = id;
     }
 
-    /**
-     *
-     */
-    public int ID;
+    private String penulis;
 
-    /**
-     *
-     */
-    public String Penulis;
+    public String getPenulis() {
+        return penulis;
+    }
 
-    /**
-     *
-     */
-    public String Judul;
+    public void setPenulis(String penulis) {
+        this.penulis = penulis;
+    }
 
-    /**
-     *
-     */
-    public int Stok;
+    private String judul;
 
-    /**
-     *
-     */
-    public int Dipinjam;
+    public String getJudul() {
+        return judul;
+    }
 
-    /**
-     *
-     */
+    public void setJudul(String judul) {
+        this.judul = judul;
+    }
 
+    private int stok;
 
-    /**
-     * @param id
-     * @param penulis
-     * @param judul
-     * @param stok
-     * @param dipinjam
-     */
-    public void Buku(int id, String penulis, String judul, int stok, int dipinjam) {
-        this.ID = id;
-        this.Penulis = penulis;
-        this.Judul = judul;
-        this.Stok = stok;
-        this.Dipinjam = dipinjam;
+    public int getStok() {
+        return stok;
+    }
 
+    public void setStok(int stok) {
+        this.stok = stok;
+    }
+
+    private int dipinjam;
+
+    public int getDipinjam() {
+        return this.dipinjam;
+    }
+
+    public void setDipinjam(int dipinjam) {
+        this.dipinjam = dipinjam;
     }
 
     /**
-     * @return
+     * Konstruktor untuk objek kelas Buku.
+     *
+     * @param id       ID buku.
+     * @param penulis  Nama penulis buku.
+     * @param judul    Judul buku.
+     * @param stok     Jumlah buku.
+     * @param dipinjam Jumlah buku yang dipinjam.
      */
-    public void decreaseStok() {
-        // TODO implement here
-        return ;
+    public Buku(int id, String penulis, String judul, int stok, int dipinjam) {
+        this.id = id;
+        this.penulis = penulis;
+        this.judul = judul;
+        this.stok = stok;
+        this.dipinjam = dipinjam;
     }
 
     /**
-     * @return
+     * Mengurangi stok buku saat dipinjam.
+     */
+    public void decreaseStok() throws Exception {
+        if (this.stok > 0) {
+            this.stok--;
+            return;
+        }
+
+        throw new Exception("Buku " + this.judul + " tidak ada stok.");
+    }
+
+    /**
+     * Menambah stok buku dengan 1 saat buku dikembalikan oleh anggota.
      */
     public void increaseStok() {
-        // TODO implement here
-        return ;
+        this.stok++;
     }
 
     /**
-     * @return
+     * Menambah jumlah buku yang sedang dipinjam oleh anggota dengan 1 saat buku
+     * dipinjam.
      */
-    public void decreaseDipinjam() {
-        // TODO implement here
-        return ;
+    public void increaseDipinjam() throws Exception {
+        if (this.stok <= 0) {
+            throw new Exception("Tidak bisa meminjam. " + "Buku " + this.judul + " tidak ada stok.");
+        }
+
+        if (this.dipinjam == this.stok) {
+            throw new Exception("Buku " + this.judul + " habis dipinjam.");
+        }
+
+        this.dipinjam++;
     }
 
     /**
-     * @return
+     * Mengurangi jumlah buku yang sedang dipinjam oleh anggota dengan 1 saat buku
+     * dikembalikan.
      */
-    public void increaseDipinjam() {
-        // TODO implement here
-        return;
+    public void decreaseDipinjam() throws Exception {
+        if (this.stok <= 0) {
+            throw new Exception("Tidak bisa mengembalikan pinjaman. " + "Buku " + this.judul + " tidak ada stok.");
+        }
+
+        this.dipinjam--;
     }
 
     /**
-     *
+     * Menampilkan informasi buku.
      */
     public void printInfoBuku() {
-        // TODO implement here
-    }
-
-    /**
-     * @return
-     */
-    public int getID() {
-        // TODO implement here
-        return 0;
-    }
-
-    /**
-     * @param id
-     * @return
-     */
-    public void setID(int id) {
-        // TODO implement here
-        return ;
-    }
-
-    /**
-     * @return
-     */
-    public String getPenulis() {
-        // TODO implement here
-        return "";
-    }
-
-    /**
-     * @param penulis
-     * @return
-     */
-    public void setPenulis(String penulis) {
-        // TODO implement here
-        return ;
-    }
-
-    /**
-     * @return
-     */
-    public String getJudul() {
-        // TODO implement here
-        return "";
-    }
-
-    /**
-     * @param judul
-     * @return
-     */
-    public void setJudul(String judul) {
-        // TODO implement here
-        return ;
-    }
-
-    /**
-     * @return
-     */
-    public int getStok() {
-        // TODO implement here
-        return 0;
-    }
-
-    /**
-     * @param stok
-     * @return
-     */
-    public void setStok(int stok) {
-        // TODO implement here
-        return ;
-    }
-
-    /**
-     * @return
-     */
-    public int getDipinjam() {
-        // TODO implement here
-        return 0;
-    }
-
-    /**
-     * @param dipinjam
-     * @return
-     */
-    public void setDipinjam(int dipinjam) {
-        // TODO implement here
-        return ;
+        System.out.println("ID\t\t\t: " + this.id);
+        System.out.println("Judul\t\t\t: " + this.judul);
+        System.out.println("Penulis\t\t\t: " + this.penulis);
+        System.out.println("Stok\t\t\t: " + this.stok);
+        System.out.println("Dipinjam\t\t: " + this.dipinjam);
     }
 
 }
