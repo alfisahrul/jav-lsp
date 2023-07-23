@@ -1,12 +1,15 @@
 package service;
-
+import entity.BukuInputData;
+import entity.Buku;
 public interface BukuService
 {
     void showBuku();
 
-    void addBuku(String buku);
+    void addBuku(BukuInputData inputData);
 
-    void removeBuku(String buku);
+    void removeBuku(Integer number);
 
-    void editBuku(String buku);
+    void editBuku(BukuInputData inputData);
+
+    Buku findBukuById(int id);
 }

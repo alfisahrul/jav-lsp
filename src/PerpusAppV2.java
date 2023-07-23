@@ -1,9 +1,14 @@
 import repository.AnggotaRepository;
 import repository.AnggotaRepositoryImpl;
+import repository.BukuRepository;
+import repository.BukuRepositoryImpl;
 import service.AnggotaService;
 import service.AnggotaServiceImp;
+import service.BukuService;
+import service.BukuServiceImpl;
 import util.InputUtil;
 import view.AnggotaView;
+import view.BukuView;
 
 public class PerpusAppV2
 {
@@ -12,7 +17,9 @@ public class PerpusAppV2
         AnggotaRepository anggotaRepository = new AnggotaRepositoryImpl();
         AnggotaService anggotaService = new AnggotaServiceImp(anggotaRepository);
         AnggotaView anggotaView = new AnggotaView(anggotaService);
-
+        BukuRepository bukuRepository = new BukuRepositoryImpl();
+        BukuService bukuService = new BukuServiceImpl(bukuRepository);
+        BukuView bukuView = new BukuView(bukuService);
 
         while (true){
 
@@ -28,7 +35,7 @@ public class PerpusAppV2
             var pilihan = InputUtil.input("Masukan Pilihan anda ");
             switch (pilihan){
                 case "1":
-
+                    bukuView.showMenuBuku();
                     break;
 
                 case "2":

@@ -6,10 +6,11 @@ public interface BukuRepository
 
     void add(Buku buku);
 
-    void remove(Buku buku);
+    boolean remove(Integer number);
 
     void edit(Buku buku);
 
+    Buku findBukuById(int id);
 
 
 
