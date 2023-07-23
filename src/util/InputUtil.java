@@ -8,7 +8,7 @@ public class InputUtil
 
     public static String input(String info)
     {
-        System.out.println(info + " : ");
+        System.out.println(info + " ");
         String inputan = scanner.nextLine();
         return inputan;
     }

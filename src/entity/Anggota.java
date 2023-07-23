@@ -12,6 +12,7 @@ public class Anggota extends Person
      * @param alamat       Alamat.
      * @param jenisKelamin Jenis kelamin.
      */
+
     public Anggota(int id, String nama, String ktp, String alamat, String jenisKelamin)
     {
         super(id, nama, ktp, alamat, jenisKelamin);

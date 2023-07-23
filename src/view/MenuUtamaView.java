@@ -1,21 +1,16 @@
-import repository.AnggotaRepository;
-import repository.AnggotaRepositoryImpl;
+package view;
+
 import service.AnggotaService;
-import service.AnggotaServiceImp;
 import util.InputUtil;
-import view.AnggotaView;
 
-public class PerpusAppV2
+public class MenuUtamaView
 {
-    public static void main(String[] args)
+    public void showMenuUtamaPerpustakaan()
     {
-        AnggotaRepository anggotaRepository = new AnggotaRepositoryImpl();
-        AnggotaService anggotaService = new AnggotaServiceImp(anggotaRepository);
-        AnggotaView anggotaView = new AnggotaView(anggotaService);
-
 
         while (true){
-
+            System.out.println(" Menu Utama");
+            InputUtil.printEqual();
             System.out.println("===== MENU PERPUSTAKAAN =====");
             System.out.println("1. Menu Buku");
             System.out.println("2. Menu Anggota");
@@ -23,7 +18,7 @@ public class PerpusAppV2
             System.out.println("0. Keluar dari program");
             System.out.print("Pilih [0-3]: ");
 
-
+            InputUtil.printEqual();
             // Memasukan pilihan yang sesuai dengan kondisi
             var pilihan = InputUtil.input("Masukan Pilihan anda ");
             switch (pilihan){
@@ -32,7 +27,7 @@ public class PerpusAppV2
                     break;
 
                 case "2":
-                    anggotaView.showMenuAnggota();
+
                     break;
 
                 case "3":
@@ -47,8 +42,6 @@ public class PerpusAppV2
             }
 
         }
-
-
 
     }
 }
