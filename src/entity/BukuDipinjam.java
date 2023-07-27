@@ -3,13 +3,22 @@ package entity;
 import java.util.ArrayList;
 
 public class BukuDipinjam extends Buku {
+
     private ArrayList<Anggota> peminjam;
     private String dipinjam;
 
-    public BukuDipinjam(int id, String penulis, String judul, int stok) {
-        super(id, penulis, judul, stok);
-        peminjam = new ArrayList<>();
-        dipinjam = "Belum Dipinjam"; // Default value when a book is added
+    private  Anggota peminjam;
+
+    public BukuDipinjam(int id, String judul, String penulis, int stok, int dipinjam, Anggota peminjam) {
+        super(id, judul, penulis, stok, dipinjam);
+        this.peminjam = peminjam;
+    }
+    public Anggota getPeminjam() {
+        return peminjam;
+    }
+
+    public void setPeminjam(Anggota peminjam) {
+        this.peminjam = peminjam;
     }
 
     public ArrayList<Anggota> getPeminjam() {
@@ -20,9 +29,7 @@ public class BukuDipinjam extends Buku {
         this.peminjam = peminjam;
     }
 
-    public String getDipinjam() {
-        return dipinjam;
-    }
+
 
     public void setDipinjam(String dipinjam) {
         this.dipinjam = dipinjam;

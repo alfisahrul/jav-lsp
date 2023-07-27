@@ -6,6 +6,8 @@ public class Buku {
     private String judul;
     private int stok;
 
+    private int dipinjam;
+
     public Buku(int id, String penulis, String judul, int stok) {
         this.id = id;
         this.penulis = penulis;
@@ -57,12 +59,14 @@ public class Buku {
 
     // Methods to update the dipinjam status
     public void decreaseDipinjam() {
-        stok--;
+        dipinjam--;
     }
 
     public void increaseDipinjam() {
-        stok++;
+        dipinjam++;
     }
+
+
 
     public void printInfoBuku() {
         System.out.println("ID: " + id);

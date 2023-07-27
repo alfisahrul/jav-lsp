@@ -31,4 +31,27 @@ public class BukuDipinjamServiceImpl implements BukuDipinjamService {
     public boolean removeBukuDipinjam(int bukuDipinjamId) {
         return bukuDipinjamRepository.removeBukuDipinjam(bukuDipinjamId);
     }
+    @Override
+    public BukuDipinjam findBukuDipinjamById(int bukuDipinjamId) {
+        return bukuDipinjamRepository.findBukuDipinjamById(bukuDipinjamId);
+    }
+
+
+
+    @Override
+    public void pinjamBuku(int bukuDipinjamId) {
+        BukuDipinjam bukuDipinjam = bukuDipinjamRepository.findBukuDipinjamById(bukuDipinjamId);
+        if (bukuDipinjam != null) {
+            if (bukuDipinjam.getStok() > 0 && bukuDipinjam.getDipinjam() < bukuDipinjam.getStok()) {
+                bukuDipinjam.decreaseStok();
+                bukuDipinjam.increaseDipinjam();
+                System.out.println("BukuDipinjam dengan ID " + bukuDipinjamId + " berhasil dipinjam.");
+            } else {
+                System.out.println("BukuDipinjam dengan ID " + bukuDipinjamId + " tidak tersedia untuk dipinjam.");
+            }
+        } else {
+            System.out.println("BukuDipinjam dengan ID " + bukuDipinjamId + " tidak ditemukan.");
+        }
+    }
+
 }

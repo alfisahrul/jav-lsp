@@ -51,7 +51,13 @@ public class BukuDipinjamView {
 
     private void pinjamBuku() {
         System.out.println("\n=== Pinjam Buku ===");
-        // Add logic here to handle the process of borrowing a book
+
+        System.out.println("\n=== Pinjam Buku ===");
+        System.out.print("Enter the ID of the Buku to borrow: ");
+        int bukuId = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character after reading the integer input
+
+        bukuDipinjamService.pinjamBuku(bukuId);
     }
 
     private void showAllBukuDipinjam() {
