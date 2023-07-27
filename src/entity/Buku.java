@@ -2,6 +2,16 @@ package entity;
 
 public class Buku {
     private int id;
+    private String penulis;
+    private String judul;
+    private int stok;
+
+    public Buku(int id, String penulis, String judul, int stok) {
+        this.id = id;
+        this.penulis = penulis;
+        this.judul = judul;
+        this.stok = stok;
+    }
 
     public int getId() {
         return id;
@@ -11,8 +21,6 @@ public class Buku {
         this.id = id;
     }
 
-    private String penulis;
-
     public String getPenulis() {
         return penulis;
     }
@@ -20,8 +28,6 @@ public class Buku {
     public void setPenulis(String penulis) {
         this.penulis = penulis;
     }
-
-    private String judul;
 
     public String getJudul() {
         return judul;
@@ -31,8 +37,6 @@ public class Buku {
         this.judul = judul;
     }
 
-    private int stok;
-
     public int getStok() {
         return stok;
     }
@@ -41,22 +45,29 @@ public class Buku {
         this.stok = stok;
     }
 
-    private int dipinjam;
-
-    public int getDipinjam() {
-        return this.dipinjam;
+    public void decreaseStok() {
+        if (stok > 0) {
+            stok--;
+        }
     }
 
-    public void setDipinjam(int dipinjam) {
-        this.dipinjam = dipinjam;
+    public void increaseStok() {
+        stok++;
     }
 
-    public Buku(int id, String penulis, String judul, int stok, int dipinjam)
-    {
-        this.id = id;
-        this.penulis = penulis;
-        this.judul = judul;
-        this.stok = stok;
-        this.dipinjam = dipinjam;
+    // Methods to update the dipinjam status
+    public void decreaseDipinjam() {
+        stok--;
+    }
+
+    public void increaseDipinjam() {
+        stok++;
+    }
+
+    public void printInfoBuku() {
+        System.out.println("ID: " + id);
+        System.out.println("Penulis: " + penulis);
+        System.out.println("Judul: " + judul);
+        System.out.println("Stok: " + stok);
     }
 }

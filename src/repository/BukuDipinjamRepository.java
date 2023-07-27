@@ -5,11 +5,12 @@ import entity.BukuDipinjam;
 public interface BukuDipinjamRepository
 {
 
-    BukuDipinjam[] getAll();
+    BukuDipinjam[] getAllBukuDipinjam();
+    void addBukuDipinjam(BukuDipinjam bukuDipinjam);
 
-    void add(BukuDipinjam bukuDipinjam);
+    boolean removeBukuDipinjam(int bukuDipinjamId);
 
 
-
+    BukuDipinjam findBukuDipinjamById(int id);
 
 }

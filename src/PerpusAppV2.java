@@ -1,13 +1,8 @@
-import repository.AnggotaRepository;
-import repository.AnggotaRepositoryImpl;
-import repository.BukuRepository;
-import repository.BukuRepositoryImpl;
-import service.AnggotaService;
-import service.AnggotaServiceImp;
-import service.BukuService;
-import service.BukuServiceImpl;
+import repository.*;
+import service.*;
 import util.InputUtil;
 import view.AnggotaView;
+import view.BukuDipinjamView;
 import view.BukuView;
 
 public class PerpusAppV2
@@ -20,6 +15,10 @@ public class PerpusAppV2
         BukuRepository bukuRepository = new BukuRepositoryImpl();
         BukuService bukuService = new BukuServiceImpl(bukuRepository);
         BukuView bukuView = new BukuView(bukuService);
+        BukuDipinjamRepository bukuDipinjamRepository = new BukuDipinjamRepositoryImpl();
+        BukuDipinjamService bukuDipinjamService = new BukuDipinjamServiceImpl(bukuDipinjamRepository);
+        BukuDipinjamView bukuDipinjamView = new BukuDipinjamView(bukuDipinjamService);
+
 
         while (true){
 
@@ -43,7 +42,7 @@ public class PerpusAppV2
                     break;
 
                 case "3":
-
+                    bukuDipinjamView.showMenu();
                     break;
                 case "0":
                     System.out.println("Terimakasih telah menggunakan aplikasi ");

@@ -24,10 +24,9 @@ public class BukuServiceImpl implements BukuService
 
             if(buku != null){
                 System.out.println(no + ". " + buku.getId()+"  "+
-                                   buku.getJudul()+"  "+
-                                   buku.getPenulis()+"  "+
-                                   buku.getStok()+"  "+
-                                   buku.getDipinjam());
+                                           buku.getJudul()+"  "+
+                                           buku.getPenulis()+"  "+
+                                           buku.getStok()+"  ");
             }
         }
 
@@ -39,9 +38,9 @@ public class BukuServiceImpl implements BukuService
         Buku buku = new Buku(inputData.getId(),
                              inputData.getJudul(),
                              inputData.getPenulis(),
-                             inputData.getStok(),
-                             inputData.getDipinjam()
-                             );
+                             inputData.getStok()
+
+        );
         bukuRepository.add(buku);
         System.out.println("Sukses menambah buku : " + buku.getJudul());
 
@@ -74,7 +73,6 @@ public class BukuServiceImpl implements BukuService
             existingBuku.setPenulis(inputData.getPenulis());
             existingBuku.setJudul(inputData.getJudul());
             existingBuku.setStok(inputData.getStok());
-            existingBuku.setDipinjam(inputData.getDipinjam());
 
             bukuRepository.edit(existingBuku);
             System.out.println("Sukses mengedit buku dengan ID: " + inputData.getId());
